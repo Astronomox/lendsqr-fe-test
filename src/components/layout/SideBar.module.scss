@@ -1,0 +1,132 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.side-nav {
+  font-family: $font-family;
+  background-color: #ffffff;
+  height: 100vh;
+  width: 283px;
+  min-width: 283px;
+  position: relative;
+  z-index: 1020;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  @include tablet {
+    position: fixed;
+    width: 262px;
+    min-width: 262px;
+    left: -270px;
+    z-index: 1030;
+    transition: all 0.5s;
+
+    &.nav-active {
+      left: 0px;
+    }
+  }
+
+  .side-nav-header {
+    height: 100px;
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      height: 70px;
+    }
+
+    img {
+      width: 110px;
+    }
+  }
+
+  .side-nav-menu {
+    padding: 30px 0px;
+    list-style: none;
+
+    a {
+      color: $secondary-color;
+      font-size: 16px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .side-nav-menu-item {
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid transparent;
+      cursor: pointer;
+      list-style: none;
+
+      img {
+        width: 16px;
+        height: 16px;
+        opacity: 0.6;
+      }
+
+      span {
+        font-size: 16px;
+        color: $secondary-color;
+        opacity: 0.8;
+      }
+
+      &.active {
+        background-color: rgba(57, 205, 204, 0.22);
+        border-left: 4px solid $primary-color;
+
+        span {
+          opacity: 1;
+          font-weight: 600;
+        }
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    .nav-item-header {
+      padding: 10px 30px;
+      color: $text-secondary;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      list-style: none;
+      margin-bottom: 10px;
+    }
+  }
+
+  .logout {
+    border-top: 1px solid rgba(33, 64, 125, 0.35);
+    padding: 20px 30px;
+    cursor: pointer;
+    color: $secondary-color;
+    font-size: 16px;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .version {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  }
+}
+
+.nav-active {
+  left: 0px !important;
+}

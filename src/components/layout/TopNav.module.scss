@@ -1,0 +1,127 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.top-nav {
+  background-color: #ffffff;
+  height: 100px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+  @include tablet {
+    height: 70px;
+  }
+
+  .search-input {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      display: none;
+    }
+
+    input {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border: 1px solid $secondary-color;
+      border-right: none;
+      height: 40px;
+      opacity: 0.5;
+      width: calc(100% - 56px);
+      padding: 0px 12px;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+      font-family: $font-family;
+      font-size: 14px;
+    }
+
+    button {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      width: 56px;
+      background-color: $primary-color;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.top-nav-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: $secondary-color;
+
+  .logo {
+    width: 120px;
+  }
+
+  .menu-icon {
+    display: none;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include tablet {
+      display: block;
+      cursor: pointer;
+      z-index: 2400;
+    }
+  }
+}
+
+.top-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include tablet {
+    display: none;
+  }
+
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    font-size: 16px;
+  }
+}
+
+.top-nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  img:first-child {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+  }
+
+  p {
+    font-weight: 600;
+    color: $secondary-color;
+    font-size: 16px;
+  }
+}
