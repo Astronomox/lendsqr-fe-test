@@ -4,7 +4,7 @@ A frontend implementation of the Lendsqr admin dashboard, built as part of the L
 
 ## Live Demo
 
-[https://abdullahi-lendsqr-fe-test.vercel.app](https://abdullahi-lendsqr-fe-test.vercel.app)
+[https://abdullahi-oriola-lendsqr-fe-test.vercel.app/](https://abdullahi-oriola-lendsqr-fe-test.vercel.app/)
 
 ## Tech Stack
 
